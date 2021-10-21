@@ -7,10 +7,17 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.ResponseBody
 
 @Controller
-class SampleController {
-    @GetMapping("/")
+class TodoController {
+    @GetMapping("/healthcheck")
     @ResponseBody
-    fun index(model: Model): ResponseEntity<String> {
+    fun healthCheck(model: Model): ResponseEntity<String> {
         return ResponseEntity.ok("hello world")
+    }
+
+    @GetMapping("/")
+    fun index(model: Model): String {
+        // TODO 仮置き固定
+        model.addAttribute("list", listOf("item1","item2","item3"))
+        return "index"
     }
 }
