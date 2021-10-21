@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Todo App</title>
+</head>
+<body>
+  <h1>Todo App</h1>
+  <button>add todo</button>
+<ul>
+  <li th:each="element : ${list}">
+    <p th:text="${element}"></p><button>edit</button> <button>remove</button>
+  </li>
+</ul>
+</body>
+</html>
