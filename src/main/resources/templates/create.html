@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Todo App</title>
+</head>
+<body>
+<h1>Todo App</h1>
+<form th:action="@{/create}" method="post">
+    <input type="text" name="name">
+    <button>create</button>
+</form>
+</body>
+</html>
