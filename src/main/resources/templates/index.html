@@ -6,10 +6,12 @@
 </head>
 <body>
   <h1>Todo App</h1>
-  <button>add todo</button>
+  <form th:action="@{/create}">
+    <button>add todo</button>
+  </form>
 <ul>
-  <li th:each="element : ${list}">
-    <p th:text="${element}"></p><button>edit</button> <button>remove</button>
+  <li th:each="todo : ${todoList}">
+    <p th:text="${todo.name}"></p><button>edit</button> <button>remove</button>
   </li>
 </ul>
 </body>
