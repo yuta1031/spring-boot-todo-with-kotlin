@@ -6,12 +6,23 @@
 </head>
 <body>
   <h1>Todo App</h1>
-  <form th:action="@{/create}">
+  <p th:if="${message != null}" th:text="${message}"></p>
+  <a th:href="@{/create}">
     <button>add todo</button>
-  </form>
+  </a>
 <ul>
   <li th:each="todo : ${todoList}">
-    <p th:text="${todo.name}"></p><button>edit</button> <button>remove</button>
+    <p th:text="${todo.name}"></p>
+    <div>
+      <a th:href="@{'/update/'+${todo.id}}">
+        <button>edit</button>
+      </a>
+    </div>
+    <div>
+      <a th:href="@{'/delete/'+${todo.id}}">
+        <button>remove</button>
+      </a>
+    </div>
   </li>
 </ul>
 </body>

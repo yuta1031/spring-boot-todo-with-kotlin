@@ -1,12 +1,11 @@
 package com.aaing.todo
 
-import org.jetbrains.annotations.NotNull
 import javax.validation.constraints.NotEmpty
 import javax.validation.constraints.Size
 
-data class TodoCreateDto(
+data class TodoDto(
 
     @field:NotEmpty
-    @field:Size(max = 100)
+    @field:Size(min = 1,max = 100)
     val name: String?
 )

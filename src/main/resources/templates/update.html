@@ -11,9 +11,9 @@
         <p th:text="${error.defaultMessage}"></p>
     </li>
 </ul>
-<form th:action="@{/create}" method="post">
+<form th:action="@{'/update/'+${id}}" method="post">
     <input type="text" name="name">
-    <button>create</button>
+    <button>update</button>
 </form>
 </body>
 </html>
